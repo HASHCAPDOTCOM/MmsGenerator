@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MMS Generator</string>
+    <string name="menu_settings">Settings</string>
+    <string name="conversations">Conversations</string>
+    <string name="messages">Messages</string>
+    <string name="number">Number</string>
+    <string name="inbox">Inbox</string>
+    <string name="outbox">Outbox</string>
+    <string name="sent">Sent</string>
+    <string name="failed">Failed</string>
+    <string name="draft">Draft</string>
+    <string name="notification_ind">Notification Ind</string>
+    <string name="help">Help</string>
+    <string name="start">Start</string>
+    <string name="stop">Stop</string>
+    <string name="settings">Settings</string>
+    <string name="info">http://hashcap.com\n\u00a9 2013 HASHCAP Pvt. Ltd.</string>
+
+    
+
+</resources>

@@ -1,0 +1,94 @@
+package com.hashcap.mmsgenerator;
+
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.os.Bundle;
+import android.preference.ListPreference;
+import android.preference.Preference;
+import android.preference.PreferenceActivity;
+
+public class SettingsPreferenceActivity extends PreferenceActivity implements
+		OnSharedPreferenceChangeListener {
+	private static final String ATTACHMENT_TYPE_LIST = "attachment_type_list";
+	private static final String ATTACHMENT_DATA_LIST = "attachment_data_list";
+	private static final String ATTACHMENT_TYPE_LIST_D_SUMMARY = "Choose MMS Attachment type for messages.";
+	private static final String ATTACHMENT_DATA_LIST_D_SUMMARY = "Choose attachment data accordingly attachment type.";
+	private static final String IMAGE = "image";
+	private static final String AUDIO = "audio";
+	private static final String VIDEO = "video";
+	private static final String OTHER = "other";
+
+	/** Called when the activity is first created. */
+	@SuppressWarnings("deprecation")
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		addPreferencesFromResource(R.xml.preferences);
+		loadSavedAttachmentData();
+
+	}
+
+	@SuppressWarnings("deprecation")
+	@Override
+	protected void onResume() {
+		super.onResume();
+		getPreferenceScreen().getSharedPreferences()
+				.registerOnSharedPreferenceChangeListener(this);
+	}
+
+	@SuppressWarnings("deprecation")
+	@Override
+	protected void onStop() {
+		super.onStop();
+		getPreferenceScreen().getSharedPreferences()
+				.unregisterOnSharedPreferenceChangeListener(this);
+	}
+
+	@Override
+	public void onSharedPreferenceChanged(SharedPreferences sharedPreferences,
+			String key) {
+		Preference preference = findPreference(key);
+		if (preference instanceof ListPreference) {
+			if (preference.getKey().equals(ATTACHMENT_TYPE_LIST)) {
+
+				resetAttachmentDataList();
+
+			} else if (preference.getKey().equals(ATTACHMENT_DATA_LIST)) {
+				String value = ((ListPreference) preference).getValue();
+				((ListPreference) preference).setSummary(value);
+
+			}
+		}
+
+	}
+	private void loadSavedAttachmentData(){
+		ListPreference preferenceAttachmentType = (ListPreference) findPreference(ATTACHMENT_TYPE_LIST);
+		ListPreference preferenceAttachmentData = (ListPreference) findPreference(ATTACHMENT_DATA_LIST);
+		String value = preferenceAttachmentType.getValue();
+		if (value.equals(IMAGE)) {
+			preferenceAttachmentData.setEntries(R.array.image_data);
+			preferenceAttachmentData.setEntryValues(R.array.image_data_ids);
+			preferenceAttachmentType.setSummary("Image");
+		} else if (value.equals(AUDIO)) {
+			preferenceAttachmentData.setEntries(R.array.audio_data);
+			preferenceAttachmentData.setEntryValues(R.array.video_data_ids);
+			preferenceAttachmentType.setSummary("Audio");
+		} else if (value.equals(VIDEO)) {
+			preferenceAttachmentData.setEntries(R.array.video_data);
+			preferenceAttachmentData.setEntryValues(R.array.video_data_ids);
+			preferenceAttachmentType.setSummary("Video");
+		} else if (value.equals(OTHER)) {
+			preferenceAttachmentData.setEntries(R.array.other_data);
+			preferenceAttachmentData.setEntryValues(R.array.other_data_ids);
+			preferenceAttachmentType.setSummary("Other");
+		}
+		preferenceAttachmentData.setSummary(preferenceAttachmentData.getValue());
+	}
+
+	private void resetAttachmentDataList() {
+		loadSavedAttachmentData();
+		ListPreference preferenceAttachmentData = (ListPreference) findPreference(ATTACHMENT_DATA_LIST);
+		preferenceAttachmentData.setSummary(ATTACHMENT_DATA_LIST_D_SUMMARY);
+
+	}
+}

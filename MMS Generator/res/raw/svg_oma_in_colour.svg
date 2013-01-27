@@ -1,0 +1,17 @@
+<?xml version="1.0" standalone="yes"?>
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg" version="1.2" baseProfile="tiny"
+   width="400" height="400" >
+  <path
+     d="M 102,232 C 102,232 27,179 83,162 C 139,146 103,232 102,232 z "
+     fill="none" stroke="blue" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="1"
+      />
+  <path
+     d="M 148,232 C 153,210 149,165 177,170 L 189,209 C 189,209 236,132 230,181 C 219,272 239,206 238,206"
+     fill="none" stroke="green" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="1"
+      />
+  <path
+     d="M 333,177 C 324,176 314,170 306,170 C 276,172 276,179 276,179 L 270,202 L 281,228 L 306,233 L 340,223 L 340,199 L 333,176 L 343,203 L 338,238"
+     fill="none" stroke="red" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-opacity="1"
+      />
+</svg>

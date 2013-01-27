@@ -1,0 +1,52 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory
+        android:key="mms_headers"
+        android:summary="Allowed Recipients type, Mms Subject "
+        android:title="MMS Headers Settings" >
+        <CheckBoxPreference
+            android:key="cc_recipient"
+            android:summary="Cc adderess for MMS Messages."
+            android:title="Cc : Recipient" />
+        <CheckBoxPreference
+            android:key="bcc_recipients"
+            android:summary="Bcc address for MMS Messages."
+            android:title="Bcc : Recipient" />
+        <CheckBoxPreference
+            android:key="email_recipients"
+            android:selectable="true"
+            android:summary="Are e-mail addresses allowed for MMS Message."
+            android:title="E-mail Address" />
+        <CheckBoxPreference
+            android:key="multiple_recipient"
+            android:selectable="true"
+            android:summary="Are multiple recipients allowed from MMS Messages."
+            android:title="Multiple Recipient" />
+        <CheckBoxPreference
+            android:key="subject"
+            android:selectable="true"
+            android:summary="Subject for MMS Messages."
+            android:title="Subject:" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="mms_date"
+        android:title="DATA" >
+        <ListPreference
+            android:dialogTitle="Attachment Type"
+            android:entries="@array/attachment_type"
+            android:entryValues="@array/attachment_value"
+            android:key="attachment_type_list"
+            android:negativeButtonText="@android:string/cancel"
+            android:summary="Choose MMS Attachment type for messages."
+            android:title="MMS Attachment type" />
+        <ListPreference
+            android:dialogTitle="Attachment Data"
+            android:entries="@array/image_data"
+            android:entryValues="@array/image_data_ids"
+            android:key="attachment_data_list"
+            android:negativeButtonText="@android:string/cancel"
+            android:summary="Choose attachment data accordingly attachment type."
+            android:title="MMS Attachment data" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

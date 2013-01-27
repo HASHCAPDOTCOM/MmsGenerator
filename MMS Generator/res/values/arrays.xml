@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="attachment_type">
+        <item>Image</item>
+        <item>Audio</item>
+        <item>Video</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="attachment_value">
+        <item>image</item>
+        <item>audio</item>
+        <item>video</item>
+        <item>other</item>
+    </string-array>
+    <string-array name="image_data">
+        <item>gif_60_80_2.2kb</item>
+        <item>jpg1_600_1200_550kb</item>
+        <item>jpg1_650_1238_60kb</item>
+        <item>png_521_kb</item>
+        <item>svg_oma_in_colour</item>
+        <item>wbmp_640_480_39kb</item>
+        <item>wbmp_60_80_10kb</item>
+    </string-array>
+
+    <integer-array name="image_data_ids">
+        <item>@raw/gif_60_80_2</item>
+        <item>@raw/jpg1_600_1200_550kb</item>
+        <item>@raw/jpg1_650_1238_60kb</item>
+        <item>@raw/png_521_kb</item>
+        <item>@raw/svg_oma_in_colour</item>
+        <item>@raw/wbmp_640_480_39kb</item>
+        <item>@raw/wbmp_60_80_10kb</item>
+    </integer-array>
+
+    <string-array name="audio_data">
+        <item>audio_20sec_amr</item>
+        <item>rich_100k_amr</item>
+        <item>song_imy</item>
+        <item>audio_mid</item>
+        <item>midi1_mid</item>
+        <item>song_mp3</item>
+        <item>audio_20sec_qcp</item>
+        <item>audio3_qcp</item>
+        <item>song_wav</item>
+    </string-array>
+
+    <integer-array name="audio_data_ids">
+        <item>@raw/audio_20sec_amr</item>
+        <item>@raw/rich_100k_amr</item>
+        <item>@raw/song_imy</item>
+        <item>@raw/audio_mid</item>
+        <item>@raw/midi1_mid</item>
+        <item>@raw/song_mp3</item>
+        <item>@raw/audio_20sec_qcp</item>
+        <item>@raw/audio3_qcp</item>
+        <item>@raw/song_wav</item>
+    </integer-array>
+
+    <string-array name="video_data">
+        <item>h263_13k_qcif_3g2</item>
+        <item>mp4_13k_qcif_3g2</item>
+        <item>mp4_amr_qcif_3g2</item>
+        <item>enhanced_aac_plus_audio_3gp</item>
+        <item>sub_qcif_video_3gp</item>
+        <item>video_rich_300k_3gp</item>
+    </string-array>
+
+    <integer-array name="video_data_ids">
+        <item>@raw/h263_13k_qcif_3g2</item>
+        <item>@raw/mp4_13k_qcif_3g2</item>
+        <item>@raw/mp4_amr_qcif_3g2</item>
+        <item>@raw/enhanced_aac_plus_audio_3gp</item>
+        <item>@raw/sub_qcif_video_3gp</item>
+        <item>@raw/video_rich_300k_3gp</item>
+    </integer-array>
+
+    <string-array name="other_data">
+        <item>jane_doe_vcf</item>
+        <item>rich_text_html</item>
+        <item>oma_logo_pdf</item>
+        <item>generic_text_txt</item>
+        <item>christmas_vcs</item>
+        <item>wrap_presents_vsc</item>
+    </string-array>
+
+    <integer-array name="other_data_ids">
+        <item>@raw/jane_doe_vcf</item>
+        <item>@raw/rich_text_html</item>
+        <item>@raw/oma_logo_pdf</item>
+        <item>@raw/generic_text_txt</item>
+        <item>@raw/christmas_vcs</item>
+        <item>@raw/wrap_presents_vsc</item>
+    </integer-array>
+
+    <string-array name="recipients">
+        <item>15555215554</item>
+        <item>15555215556</item>
+        <item>15555215558</item>
+        <item>919990999991</item>
+        <item>06580000788</item>
+        <item>8989099999</item>
+        <item>9900000999</item>
+        <item>1100000111</item>
+        <item>1234567890</item>
+        <item>9876543210</item>
+    </string-array>
+    <string-array name="email_address">
+        <item>test1234@gmail.com</item>
+        <item>test_1234@gmail.com</item>
+        <item>test.hashcap_1234@gmail.co.in</item>
+        <item>test@hashcap.com</item>
+        <item>qicksms_generator@hashcap.com</item>
+        <item>1234567890@abc.com</item>
+    </string-array>
+
+</resources>
