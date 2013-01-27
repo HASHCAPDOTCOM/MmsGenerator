@@ -25,6 +25,7 @@
             </intent-filter>
         </activity>
         <activity android:name="SettingsPreferenceActivity"></activity>
+        <service android:name="MmsGeneratorService"></service>
     </application>
 
 </manifest>

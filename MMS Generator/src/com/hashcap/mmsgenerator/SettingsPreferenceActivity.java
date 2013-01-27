@@ -9,14 +9,21 @@ import android.preference.PreferenceActivity;
 
 public class SettingsPreferenceActivity extends PreferenceActivity implements
 		OnSharedPreferenceChangeListener {
-	private static final String ATTACHMENT_TYPE_LIST = "attachment_type_list";
-	private static final String ATTACHMENT_DATA_LIST = "attachment_data_list";
-	private static final String ATTACHMENT_TYPE_LIST_D_SUMMARY = "Choose MMS Attachment type for messages.";
-	private static final String ATTACHMENT_DATA_LIST_D_SUMMARY = "Choose attachment data accordingly attachment type.";
-	private static final String IMAGE = "image";
-	private static final String AUDIO = "audio";
-	private static final String VIDEO = "video";
-	private static final String OTHER = "other";
+	// key constants
+	public static final String CC_RECIPIENT = "cc_recipients";
+	public static final String BCC_RECIPIENT = "bcc_recipients";
+	public static final String EMAIL_RECIPIENT = "email_recipients";
+	public static final String MULTIPLE_RECIPIENT = "multiple_recipient";
+	public static final String SUBJECT = "subject";
+	public static final String ATTACHMENT_TYPE_LIST = "attachment_type_list";
+	public static final String ATTACHMENT_DATA_LIST = "attachment_data_list";
+	public static final String ATTACHMENT_TYPE_LIST_D_SUMMARY = "Choose MMS Attachment type for messages.";
+	public static final String ATTACHMENT_DATA_LIST_D_SUMMARY = "Choose attachment data accordingly attachment type.";
+
+	public static final String IMAGE = "image";
+	public static final String AUDIO = "audio";
+	public static final String VIDEO = "video";
+	public static final String OTHER = "other";
 
 	/** Called when the activity is first created. */
 	@SuppressWarnings("deprecation")
@@ -61,28 +68,35 @@ public class SettingsPreferenceActivity extends PreferenceActivity implements
 		}
 
 	}
-	private void loadSavedAttachmentData(){
+
+	private void loadSavedAttachmentData() {
 		ListPreference preferenceAttachmentType = (ListPreference) findPreference(ATTACHMENT_TYPE_LIST);
 		ListPreference preferenceAttachmentData = (ListPreference) findPreference(ATTACHMENT_DATA_LIST);
 		String value = preferenceAttachmentType.getValue();
-		if (value.equals(IMAGE)) {
-			preferenceAttachmentData.setEntries(R.array.image_data);
-			preferenceAttachmentData.setEntryValues(R.array.image_data_ids);
-			preferenceAttachmentType.setSummary("Image");
-		} else if (value.equals(AUDIO)) {
-			preferenceAttachmentData.setEntries(R.array.audio_data);
-			preferenceAttachmentData.setEntryValues(R.array.video_data_ids);
-			preferenceAttachmentType.setSummary("Audio");
-		} else if (value.equals(VIDEO)) {
-			preferenceAttachmentData.setEntries(R.array.video_data);
-			preferenceAttachmentData.setEntryValues(R.array.video_data_ids);
-			preferenceAttachmentType.setSummary("Video");
-		} else if (value.equals(OTHER)) {
-			preferenceAttachmentData.setEntries(R.array.other_data);
-			preferenceAttachmentData.setEntryValues(R.array.other_data_ids);
-			preferenceAttachmentType.setSummary("Other");
+		if (value != null) {
+			if (value.equals(IMAGE)) {
+				preferenceAttachmentData.setEntries(R.array.image_data);
+				preferenceAttachmentData.setEntryValues(R.array.image_data_ids);
+				preferenceAttachmentType.setSummary("Image");
+			} else if (value.equals(AUDIO)) {
+				preferenceAttachmentData.setEntries(R.array.audio_data);
+				preferenceAttachmentData.setEntryValues(R.array.video_data_ids);
+				preferenceAttachmentType.setSummary("Audio");
+			} else if (value.equals(VIDEO)) {
+				preferenceAttachmentData.setEntries(R.array.video_data);
+				preferenceAttachmentData.setEntryValues(R.array.video_data_ids);
+				preferenceAttachmentType.setSummary("Video");
+			} else if (value.equals(OTHER)) {
+				preferenceAttachmentData.setEntries(R.array.other_data);
+				preferenceAttachmentData.setEntryValues(R.array.other_data_ids);
+				preferenceAttachmentType.setSummary("Other");
+			}
 		}
-		preferenceAttachmentData.setSummary(preferenceAttachmentData.getValue());
+		if (preferenceAttachmentData.getValue() != null) {
+			preferenceAttachmentData.setSummary(preferenceAttachmentData
+					.getValue());
+		}
+
 	}
 
 	private void resetAttachmentDataList() {
